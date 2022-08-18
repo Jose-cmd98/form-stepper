@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-step-two',
@@ -6,10 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./step-two.component.scss']
 })
 export class StepTwoComponent implements OnInit {
+  @Output() public next = new EventEmitter();
+  @Output() public previous = new EventEmitter<void>();
 
-  constructor() { }
+  public formTwo!: FormGroup
+
+  constructor(private _fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.formTwo = this._fb.group({
+      endereco: ['', Validators.required],
+      cep: ['', Validators.required],
+    })
   }
 
+
+  submit(){
+    if(this.formTwo.valid){
+      const data = this.formTwo.getRawValue();
+      this.next.emit(data);
+      console.log('form two' + data);
+    }
+  }
+  back(): void{
+    this.previous.emit();
+  }
 }

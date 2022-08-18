@@ -1,1 +1,13 @@
-<p>step-one works!</p>
+<h2>First Step</h2>
+
+<form [formGroup]="formOne" (ngSubmit)="submit()">
+  <label>
+    nome:
+  </label>
+  <input type="text" class="form-control" formControlName="nome">
+  <label>
+    sobrenome:
+  </label>
+  <input type="text" class="form-control" formControlName="sobrenome">
+  <button type="submit" class="btn btn-primary">next</button>
+</form>

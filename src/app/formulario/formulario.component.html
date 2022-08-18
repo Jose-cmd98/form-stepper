@@ -1,1 +1,19 @@
-<p>formulario works!</p>
+<div class="m-auto" style="max-width:400px;">
+  <div class="mt-4">
+    <mat-stepper
+      linear
+      #stepper
+      (selectionChange)="updateCurrStep($event.selectedIndex + 1)"
+      >
+    <mat-step  [editable]="false">
+      <app-step-one (next)="next($event)"></app-step-one>
+    </mat-step>
+    <mat-step  [editable]="false">
+      <app-step-two
+        (previous)="previous()"
+       (next)="next($event)"
+       ></app-step-two>
+    </mat-step>
+    </mat-stepper>
+  </div>
+</div>

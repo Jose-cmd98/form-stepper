@@ -1,1 +1,13 @@
-<p>step-two works!</p>
+<h2>details</h2>
+<form [formGroup]="formTwo" (ngSubmit)="submit()">
+  <label>
+    enredeco:
+  </label>
+  <input type="text" class="form-control" formControlName="endereco">
+  <label>
+    cep:
+  </label>
+  <input type="text" class="form-control" formControlName="cep">
+  <button type="submit" class="btn btn-primary">next</button>
+  <button type="button" class="btn btn-danger" (click)="back()">previus</button>
+</form>
