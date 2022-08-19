@@ -1,7 +1,8 @@
-import { StepsEnum } from './step.model';
+import { StepsService } from './steps.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatStepper } from '@angular/material/stepper';
-import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
+import { StepsEnum } from './step.model';
 
 @Component({
   selector: 'app-formulario',
@@ -10,40 +11,26 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class FormularioComponent implements OnInit {
   @ViewChild('stepper') public stepper!: MatStepper;
-  private _currStep$ = new BehaviorSubject<null>(null);
 
   public data: any = {};
 
-  constructor() { }
+  constructor(
+    private stepsService: StepsService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    this.currStep = StepsEnum.Step1;
-    console.log(this.currStep)
+    this.stepsService.currStep = StepsEnum.Step1;
   }
 
 
-  public updateCurrStep(step: StepsEnum): void{
-    this.currStep = step;
+  public updateCurrStep(step: StepsEnum): void {
+    this.stepsService.currStep = step;
   }
 
-  public next(data: any){
-    this.data = {...this.data,...data};
+  public next(data: any): void {
+    this.data = this.data ;
     this.stepper.next();
   }
-  public previous(): void{
-    this.currStep = StepsEnum.Step1;
-  }
 
-  // stepper counter
-  get currStep(){
-    return this._currStep$.getValue();
-  }
-
-  get currStep$(){
-    return this._currStep$.asObservable();
-  }
-
-  set currStep(currStep: any){
-    this._currStep$.next(currStep);
-  }
 }

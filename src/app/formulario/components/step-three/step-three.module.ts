@@ -10,6 +10,7 @@ import { StepThreeComponent } from './step-three/step-three.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [ StepThreeComponent ]
 })
 export class StepThreeModule { }
