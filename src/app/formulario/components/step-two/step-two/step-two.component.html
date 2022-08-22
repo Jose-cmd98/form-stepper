@@ -8,6 +8,20 @@
     cep:
   </label>
   <input type="text" class="form-control" formControlName="cep">
+  <!-- dinamic array -->
+  <div *ngIf="complementoControls.value" formArrayName="complemento">
+    <div *ngFor="let fields of complemento.controls; let i = index">
+    <ng-container>
+        <div >
+          <label for="complemento{{i}}">Complemento:</label>
+          <input class="form-control" type="text" [formControlName]="i">
+        </div>
+
+      </ng-container>
+    </div>
+  </div>
+  <a class="button" (click)="addField()">+ Inserir complemento</a>
+  <!-- dinamic -->
   <button type="submit" class="btn btn-primary">next</button>
   <button type="button" class="btn btn-danger" (click)="back()">previus</button>
 </form>

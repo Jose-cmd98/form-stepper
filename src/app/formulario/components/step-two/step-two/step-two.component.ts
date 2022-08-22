@@ -1,4 +1,4 @@
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray, AbstractControl } from '@angular/forms';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -10,6 +10,8 @@ export class StepTwoComponent implements OnInit {
   @Output() public next = new EventEmitter();
   @Output() public previous = new EventEmitter<void>();
 
+  get complementoControls(): AbstractControl { return this.formTwo.controls['complemento']}
+  get complemento() { return this.formTwo.get('complemento') as FormArray};
 
   public formTwo!: FormGroup;
 
@@ -20,10 +22,16 @@ export class StepTwoComponent implements OnInit {
     this.formTwo = this._fb.group({
       endereco: ['', Validators.required],
       cep: ['', Validators.required],
+        complemento: this._fb.array([
+          this._fb.control('')
+        ])
     })
     console.log('Olá, Bem vindo ao formulário 2');
   }
 
+  addField(){
+    this.complemento.push(this._fb.control(''));
+  }
 
   submit(){
     if(this.formTwo.valid){
