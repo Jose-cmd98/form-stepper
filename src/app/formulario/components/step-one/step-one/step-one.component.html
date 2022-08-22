@@ -1,13 +1,20 @@
 <h2>First Step</h2>
 
 <form [formGroup]="formOne" (ngSubmit)="submit()">
-  <label>
-    nome:
-  </label>
-  <input type="text" class="form-control" formControlName="nome">
-  <label>
-    sobrenome:
-  </label>
-  <input type="text" class="form-control" formControlName="sobrenome">
-  <button type="submit" class="btn btn-primary">next</button>
+  <div class="nome">
+
+    <label>
+      nome:
+    </label>
+    <input type="text" class="form-control" formControlName="nome" required>
+    <small class="text-danger" *ngIf="nomeControls.invalid && nomeControls.touched">*Campo Obrigatório</small>
+  </div>
+  <div class="sobrenome">
+    <label>
+      sobrenome:
+    </label>
+    <input type="text" class="form-control" formControlName="sobrenome">
+    <small *ngIf="sobreNomeControls.invalid && sobreNomeControls.touched" class="text-danger" >*Campo Obrigatório</small>
+  </div>
+  <button [disabled]="formOne.invalid" type="submit" class="btn btn-primary">next</button>
 </form>

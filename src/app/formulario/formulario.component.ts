@@ -27,6 +27,11 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
     this.stepsService.currStep = StepsEnum.Step1;
     this.step = this.step = 1;
+
+    // setTimeout(() =>{
+    //   this.stepper.next();
+    //   this.stepper.next();
+    // })
   }
 
   next(data: any){

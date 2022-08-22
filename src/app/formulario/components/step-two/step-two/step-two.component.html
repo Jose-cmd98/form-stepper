@@ -1,13 +1,19 @@
 <h2>details</h2>
 <form [formGroup]="formTwo" (ngSubmit)="submit()">
-  <label>
-    enredeco:
-  </label>
-  <input type="text" class="form-control" formControlName="endereco">
-  <label>
-    cep:
-  </label>
-  <input type="text" class="form-control" formControlName="cep">
+  <div>
+    <label>
+      Endereço:
+    </label>
+    <input type="text" class="form-control" formControlName="endereco">
+    <small class="text-danger" *ngIf="enderecoControls.invalid && enderecoControls.touched">*Campo Obrigatório</small>
+  </div>
+  <div>
+    <label>
+      CEP:
+    </label>
+    <input type="text" class="form-control" formControlName="cep">
+    <small class="text-danger" *ngIf="cepControls.invalid && cepControls.touched">*Campo Obrigatório</small>
+  </div>
   <!-- dinamic array -->
   <div *ngIf="complementoControls.value" formArrayName="complemento">
     <div *ngFor="let fields of complemento.controls; let i = index">
@@ -18,9 +24,13 @@
         </div>
 
       </ng-container>
+      <a class="button" (click)="removeField(i)">- excluir complemento</a>
+      <a class="button" (click)="addField()">+ Inserir complemento</a>
     </div>
   </div>
-  <a class="button" (click)="addField()">+ Inserir complemento</a>
+  <div>
+
+  </div>
   <!-- dinamic -->
   <button type="submit" class="btn btn-primary">next</button>
   <button type="button" class="btn btn-danger" (click)="back()">previus</button>

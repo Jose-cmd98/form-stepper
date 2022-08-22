@@ -1,8 +1,9 @@
 <h2>Submit your proposal</h2>
 <form [formGroup]="formthree" (ngSubmit)="submit()">
-
-  <input type="checkbox" value="aceito" class="checkbox-control" formControlName="aceito">
-
+  <div>
+    <input type="radio" value="aceito" class="checkbox-control" formControlName="aceito">
+    <label for="">Confirmo e aceito os termos</label>
+  </div>
 
   <button type="button" class="btn btn-primary" (click)="back()">
     previous

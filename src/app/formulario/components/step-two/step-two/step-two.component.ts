@@ -13,6 +13,10 @@ export class StepTwoComponent implements OnInit {
   get complementoControls(): AbstractControl { return this.formTwo.controls['complemento']}
   get complemento() { return this.formTwo.get('complemento') as FormArray};
 
+  get enderecoControls(): AbstractControl { return this.formTwo.controls['endereco']};
+  get cepControls(): AbstractControl { return this.formTwo.controls['cep']};
+
+
   public formTwo!: FormGroup;
 
 
@@ -31,6 +35,9 @@ export class StepTwoComponent implements OnInit {
 
   addField(){
     this.complemento.push(this._fb.control(''));
+  }
+  removeField(index: any){
+    this.complemento.removeAt(index)
   }
 
   submit(){

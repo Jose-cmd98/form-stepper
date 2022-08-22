@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-step-one',
@@ -9,6 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class StepOneComponent implements OnInit {
   @Output() public next = new EventEmitter();
   @Output() public proximo = new EventEmitter();
+
+  get nomeControls(): AbstractControl { return this.formOne.controls['nome']}
+  get sobreNomeControls(): AbstractControl { return this.formOne.controls['sobrenome']}
 
   public formOne!: FormGroup;
   public step: any = 2;
