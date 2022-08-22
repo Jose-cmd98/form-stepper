@@ -8,8 +8,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class StepOneComponent implements OnInit {
   @Output() public next = new EventEmitter();
+  @Output() public proximo = new EventEmitter();
 
   public formOne!: FormGroup;
+  public step: any = 2;
 
   constructor(private _fb: FormBuilder) { }
 
@@ -17,13 +19,15 @@ export class StepOneComponent implements OnInit {
     this.formOne = this._fb.group({
       nome: ['', Validators.required],
       sobrenome: ['', Validators.required],
-    })
+    });
+    console.log('Olá, Bem vindo ao formulário 1');
   }
 
   submit(){
     if(this.formOne.valid){
       const data = this.formOne.getRawValue();
       this.next.emit(data);
+      this.proximo.emit(this.step)
       console.log('form one' + data);
     }
   }

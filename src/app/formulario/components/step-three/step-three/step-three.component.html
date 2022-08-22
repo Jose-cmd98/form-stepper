@@ -1,1 +1,11 @@
-<p>step-three works!</p>
+<h2>Submit your proposal</h2>
+<form [formGroup]="formthree" (ngSubmit)="submit()">
+
+  <input type="checkbox" value="aceito" class="checkbox-control" formControlName="aceito">
+
+
+  <button class="btn btn-primary" (click)="back()">
+    previous
+  </button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

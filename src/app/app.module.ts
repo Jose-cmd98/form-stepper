@@ -1,3 +1,4 @@
+import { StepThreeModule } from './formulario/components/step-three/step-three.module';
 import { StepTwoModule } from './formulario/components/step-two/step-two.module';
 import { StepOneModule } from './formulario/components/step-one/step-one.module';
 import { NgModule } from '@angular/core';
@@ -23,7 +24,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     FormsModule,
     MatStepperModule,
     StepOneModule,
-    StepTwoModule
+    StepTwoModule,
+    StepThreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

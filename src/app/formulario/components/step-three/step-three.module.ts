@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StepThreeComponent } from './step-three/step-three.component';
@@ -9,7 +10,9 @@ import { StepThreeComponent } from './step-three/step-three.component';
     StepThreeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [ StepThreeComponent ]
 })

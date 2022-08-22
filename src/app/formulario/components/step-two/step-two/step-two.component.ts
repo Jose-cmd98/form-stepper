@@ -10,7 +10,9 @@ export class StepTwoComponent implements OnInit {
   @Output() public next = new EventEmitter();
   @Output() public previous = new EventEmitter<void>();
 
-  public formTwo!: FormGroup
+
+  public formTwo!: FormGroup;
+
 
   constructor(private _fb: FormBuilder) { }
 
@@ -19,6 +21,7 @@ export class StepTwoComponent implements OnInit {
       endereco: ['', Validators.required],
       cep: ['', Validators.required],
     })
+    console.log('Olá, Bem vindo ao formulário 2');
   }
 
 
@@ -29,7 +32,8 @@ export class StepTwoComponent implements OnInit {
       console.log('form two' + data);
     }
   }
-  back(): void{
+  back(): void {
+
     this.previous.emit();
   }
 }

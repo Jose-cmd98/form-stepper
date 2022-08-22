@@ -14,6 +14,11 @@ export class FormularioComponent implements OnInit {
 
   public data: any = {};
 
+    // test step
+    public step: any;
+    public stepBack: any;
+
+
   constructor(
     private stepsService: StepsService,
     private router: Router
@@ -21,16 +26,22 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit(): void {
     this.stepsService.currStep = StepsEnum.Step1;
+    this.step = this.step = 1;
   }
 
+  next(data: any){
+    this.data = { ...this.data, ...data };
+    this.stepper.next();
+  }
+
+  sendData(data: any){
+    this.next(data);
+    console.log(this.data);
+  }
 
   public updateCurrStep(step: StepsEnum): void {
     this.stepsService.currStep = step;
   }
 
-  public next(data: any): void {
-    this.data = this.data ;
-    this.stepper.next();
-  }
 
 }
