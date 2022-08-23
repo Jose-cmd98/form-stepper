@@ -19,6 +19,7 @@ export class FormularioComponent implements OnInit {
     public stepBack: any;
 
 
+
   constructor(
     private stepsService: StepsService,
     private router: Router

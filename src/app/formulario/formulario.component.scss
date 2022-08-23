@@ -1,0 +1,70 @@
+// $cb-blue: (
+//   100: #0033c6,
+//   200: #001f81,
+//   300: #001f60,
+// );
+
+// $cb-gray: (
+//   100: #ededed,
+//   200: #CCCCCC,
+//   300: #575757,
+// );
+
+// $primary: map-get($cb-blue, 100);
+
+// ::ng-deep mat-step-header.mat-step-header::after,
+// ::ng-deep mat-step-header.mat-step-header::before {
+//   border-color: transparent !important;
+// }
+
+// ::ng-deep mat-stepper {
+//   .mat-stepper-horizontal-line {
+//     display: none;
+//   }
+
+//   .mat-horizontal-stepper-header {
+//     pointer-events: none !important;
+//   }
+
+//   .mat-horizontal-stepper-header-container {
+//     justify-content: space-around;
+//     margin-bottom: 1.5rem;
+
+
+//   }
+
+
+
+//   .mat-horizontal-stepper-content {
+//     padding-bottom: 1rem;
+
+
+//   }
+// }
+
+// ::ng-deep mat-step-header {
+//   user-select: none;
+
+//   .mat-step-icon {
+//     padding: 22px;
+//     font-weight: 600;
+//     font-size: 1.3rem;
+//     background: map-get($cb-gray, 200) !important;
+//   }
+
+//   .mat-step-label {
+//     display: none;
+//   }
+
+//   .mat-step-icon-selected,
+//   .mat-step-icon-state-done {
+//     background: $primary !important;
+//   }
+// }
+
+::ng-deep .mat-step-header{
+  pointer-events: none !important;
+  cursor: not-allowed;
+
+
+}
