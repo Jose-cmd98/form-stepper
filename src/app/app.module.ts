@@ -10,11 +10,13 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
+import { FormularioTwoComponent } from './formulario-two/formulario-two.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormularioComponent
+    FormularioComponent,
+    FormularioTwoComponent
   ],
   imports: [
     BrowserModule,
