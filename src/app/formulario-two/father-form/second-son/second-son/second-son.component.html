@@ -1,0 +1,37 @@
+<h2>details</h2>
+<form [formGroup]="secondSon" (ngSubmit)="submit()">
+  <div>
+    <label>
+      Endereço:
+    </label>
+    <input type="text" class="form-control" formControlName="endereco">
+
+  </div>
+  <div>
+    <label>
+      CEP:
+    </label>
+    <input type="text" class="form-control" formControlName="cep">
+
+  </div>
+  <!-- dinamic array -->
+  <!-- <div *ngIf="complementoControls.value" formArrayName="complemento">
+    <div *ngFor="let fields of complemento.controls; let i = index">
+    <ng-container>
+        <div >
+          <label for="complemento{{i}}">Complemento:</label>
+          <input class="form-control" type="text" [formControlName]="i">
+        </div>
+
+      </ng-container>
+      <a class="button" (click)="removeField(i)">- excluir complemento</a>
+      <a class="button m-4" (click)="addField()">+ Inserir complemento</a>
+    </div>
+  </div> -->
+  <div>
+
+  </div>
+  <!-- dinamic -->
+  <button type="submit" class="btn btn-primary m-4">next</button>
+  <button type="button" class="btn btn-danger m-4" (click)="back()">previus</button>
+</form>

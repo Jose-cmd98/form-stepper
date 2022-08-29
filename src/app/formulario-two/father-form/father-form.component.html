@@ -1,0 +1,20 @@
+<div class="m-auto" style="max-width:400px;">
+  <mat-stepper class="mt-4" #stepper>
+    <mat-step >
+        <app-first-son (next)="next($event)"></app-first-son>
+    </mat-step>
+    <mat-step >
+        <app-second-son
+        (next)="next($event)"
+        (previous)="stepper.previous()"
+         ></app-second-son>
+    </mat-step>
+    <mat-step >
+        <app-tird-son
+        (previous)="stepper.previous()"
+        (next)="sendData($event)"
+         ></app-tird-son>
+    </mat-step>
+</mat-stepper>
+</div>
+

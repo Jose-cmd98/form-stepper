@@ -1,0 +1,20 @@
+<h2>First Step</h2>
+
+<form [formGroup]="firstSon" (ngSubmit)="submit()">
+  <div class="nome">
+
+    <label>
+      nome:
+    </label>
+    <input type="text" class="form-control" formControlName="nome" required>
+    <small class="text-danger" *ngIf="nomeControls.invalid && nomeControls.touched">*Nome Obrigatório</small>
+  </div>
+  <div class="sobrenome">
+    <label>
+      sobrenome:
+    </label>
+    <input type="text" class="form-control" formControlName="sobrenome" required>
+    <small class="text-danger" *ngIf="sobrenomeControls.invalid && sobrenomeControls.touched">*Sobrenome Obrigatório</small>
+  </div>
+  <button [disabled]="firstSon.invalid" type="submit" class="btn btn-primary mt-4">next</button>
+</form>
