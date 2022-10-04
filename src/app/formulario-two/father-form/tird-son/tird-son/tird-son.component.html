@@ -1,1 +1,16 @@
-<p>tird-son works!</p>
+<div class="father">
+<div class="movies">
+  <a (click)="movie()">Filmes</a>
+  <a (click)="serie()">Series</a>
+
+</div>
+<div  class="conteudo">
+  <div *ngIf="container === 1" class="filmes">
+    <p class="text-center">teste Filmes</p>
+  </div>
+
+  <div class="series">
+    <p  *ngIf="container === 2" class="text-center">teste series</p>
+  </div>
+</div>
+</div>

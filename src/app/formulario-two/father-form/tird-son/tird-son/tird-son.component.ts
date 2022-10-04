@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TirdSonComponent implements OnInit {
 
+
+  public container!: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.container = 1;
   }
 
+
+  movie(){
+    this.container = 1;
+  }
+
+  serie() {
+    this.container = 2;
+  }
 }

@@ -5,14 +5,15 @@
       Endereço:
     </label>
     <input type="text" class="form-control" formControlName="endereco">
-
+    <small class="text-danger" *ngIf="enderecoControls.invalid && enderecoControls.touched">*Endereço Obrigatório</small>
   </div>
   <div>
     <label>
       CEP:
     </label>
     <input type="text" class="form-control" formControlName="cep">
-
+    <small class="text-danger" *ngIf="cepControls.invalid && cepControls.touched">*CEP Obrigatório
+    </small>
   </div>
   <!-- dinamic array -->
   <!-- <div *ngIf="complementoControls.value" formArrayName="complemento">
@@ -32,6 +33,6 @@
 
   </div>
   <!-- dinamic -->
-  <button type="submit" class="btn btn-primary m-4">next</button>
+  <button [disabled]="secondSon.invalid" type="submit" class="btn btn-primary m-4">next</button>
   <button type="button" class="btn btn-danger m-4" (click)="back()">previus</button>
 </form>
