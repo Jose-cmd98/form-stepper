@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -21,7 +22,8 @@ import { TirdSonModule } from '../formulario-two/father-form/tird-son/tird-son.m
     CdkStepperModule,
     FirstSonModule,
     SecondSonModule,
-    TirdSonModule
+    TirdSonModule,
+    ReactiveFormsModule
   ]
 })
 export class CdkFormModule { }

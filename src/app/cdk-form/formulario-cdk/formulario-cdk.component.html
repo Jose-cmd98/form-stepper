@@ -1,7 +1,25 @@
 <app-cdk-custom-stepper>
 
-    <cdk-step> <app-first-son></app-first-son> </cdk-step>
-    <cdk-step> <app-second-son></app-second-son> </cdk-step>
-    <cdk-step> <app-tird-son></app-tird-son> </cdk-step>
+    <cdk-step>
+      <form action="" [formGroup]="formsOne">
+        <label for="">Nome:</label>
+        <input formControlName="nome" type="text">
+      </form>
+    </cdk-step>
+    <cdk-step>
+      <form [formGroup]="formsTwo">
+        <label for="">Sobrenome:</label>
+        <input type="text" formControlName="sobrenome" name="" id="">
+      </form>
+    </cdk-step>
+    <cdk-step>
+      <form action="" [formGroup]="formsTree">
+        <label for="">Idade:</label>
+        <input type="text" name="" id="" formControlName="idade">
+        <button type="submit"(click)="submit()"></button>
+      </form>
+
+    </cdk-step>
+
 
 </app-cdk-custom-stepper>
