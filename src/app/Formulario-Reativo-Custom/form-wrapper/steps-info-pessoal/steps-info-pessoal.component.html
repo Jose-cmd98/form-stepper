@@ -1,0 +1,9 @@
+
+<form [formGroup]="formulario">
+
+  <input type="text" placeholder="nome" formControlName="nome">
+  <input type="text" placeholder="Sobrenome" formControlName="sobrenome">
+  <input type="text" placeholder="endereço" formControlName="endereco">
+  <button (click)="proximo()">enviar</button>
+  <button  (click)="voltar()">voltar</button>
+</form>

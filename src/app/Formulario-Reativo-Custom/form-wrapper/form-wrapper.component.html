@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="steppers1">
+    <ul class="list-unstyled stepper">
+      <li class="stepper-item" [class.active]="stepAtual >= STEPS.Step1"></li>
+      <li class="stepper-item" [class.active]="stepAtual >= STEPS.Step2"></li>
+      <li class="stepper-item" [class.active]="stepAtual >= STEPS.Step3"></li>
+    </ul>
+  </div>
+
+  <div class="steppers">
+    <app-step-valor
+    [hidden]="stepAtual !==STEPS.Step1"
+    (step)="receberDados($event)"
+    ></app-step-valor>
+    <app-steps-info-pessoal
+    [hidden]="stepAtual !==STEPS.Step2"
+    [dados]="dados"
+    (step)="receberDados($event)"
+    (stepBack)="voltar()"
+    ></app-steps-info-pessoal>
+    <app-step-pagamento
+    [hidden]="stepAtual !==STEPS.Step3"
+    [dados]="dados"
+    (step)="sendData($event)"
+    (stepBack)="voltar()"
+    ></app-step-pagamento>
+    <p
+    [hidden]="stepAtual !==STEPS.Step4"
+    >Sucesso!</p>
+  </div>
+</div>

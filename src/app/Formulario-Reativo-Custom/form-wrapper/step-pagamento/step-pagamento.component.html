@@ -1,0 +1,11 @@
+<h2>Submit your proposal</h2>
+<form [formGroup]="formthree" >
+  <div>
+    <input type="radio" value="aceito" class="checkbox-control" formControlName="aceito">
+    <label for="">Confirmo e aceito os termos</label>
+  </div>
+
+
+  <button type="submit" (click)="submit()" class="btn btn-primary m-4">Submit</button>
+  <button type="submit" (click)="voltar()" class="btn btn-primary m-4">voltar</button>
+</form>

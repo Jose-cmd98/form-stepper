@@ -1,0 +1,28 @@
+.stepper {
+  display: flex;
+  gap: 0.3rem;
+  width: 480px;
+   &-item{
+    flex: 1;
+    background-color: rgb(150, 150, 150);
+    height: 0.3rem;
+    border-radius: 0.1rem;
+
+    &.active{
+      background-color: blue;
+    }
+   }
+}
+
+
+
+.steppers1{
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+}
+.steppers{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
