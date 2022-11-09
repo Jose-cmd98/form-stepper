@@ -1,4 +1,4 @@
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, Form } from '@angular/forms';
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
@@ -11,19 +11,36 @@ export class StepsInfoPessoalComponent implements OnInit {
   @Output() public stepBack = new EventEmitter<void>();
   @Input() public dados!: any;
 
+
   public formulario!: FormGroup;
 
   constructor(
     private _fb: FormBuilder
   ) { }
 
+  get pessoaAdicionalControl(): FormArray { return this.formulario.controls['pessoaAdicional'] as FormArray};
+
   ngOnInit(): void {
     this.formulario = this._fb.group({
-      nome: this._fb.control(''),
-      sobrenome: this._fb.control(''),
-      endereco: this._fb.control(''),
+      rua: this._fb.control(''),
+      cep: this._fb.control(''),
+      bairro: this._fb.control(''),
+      pessoaAdicional: this._fb.array([
+        this._fb.control('')
+      ]), //array de adicional
     })
   }
+  addField(){
+    this.pessoaAdicionalControl.push(this._fb.control(''));
+  }
+  removeField(index: any){
+    this.pessoaAdicionalControl.removeAt(index)
+  }
+
+  // public texte(): void {
+  //   const data = this.formulario.getRawValue();
+  //   data.complemento = data.complemento
+  // }
 
   public proximo(): void {
     const dados: any = {dados: this.formulario.getRawValue()}

@@ -4,12 +4,13 @@
   width: 480px;
    &-item{
     flex: 1;
-    background-color: rgb(150, 150, 150);
+    background-color: rgb(192, 191, 191);
     height: 0.3rem;
     border-radius: 0.1rem;
 
     &.active{
-      background-color: blue;
+      background-color: rgb(79, 79, 250);
+      transition: background-color 1s;
     }
    }
 }

@@ -1,9 +1,23 @@
 
 <form [formGroup]="formulario">
+  <h4 class="text-center">Second Step</h4>
+  <input class="form-control" type="text" placeholder="Rua" formControlName="rua">
+  <input class="form-control mt-2" type="text" placeholder="Cep" formControlName="cep">
+  <input class="form-control mt-2" type="text" placeholder="Bairro" formControlName="bairro">
+  <!-- adicionar -->
+  <div  formArrayName="pessoaAdicional">
+    <div *ngFor="let fields of pessoaAdicionalControl.controls; let i = index">
+    <ng-container>
+        <div >
+          <label for="complemento{{i}}">Complemento:</label>
+          <input class="form-control" type="text" [formControlName]="i">
+        </div>
 
-  <input type="text" placeholder="nome" formControlName="nome">
-  <input type="text" placeholder="Sobrenome" formControlName="sobrenome">
-  <input type="text" placeholder="endereço" formControlName="endereco">
-  <button (click)="proximo()">enviar</button>
-  <button  (click)="voltar()">voltar</button>
+      </ng-container>
+      <a class="button" (click)="removeField(i)">- excluir complemento</a>
+      <a class="button m-4" (click)="addField()">+ Inserir complemento</a>
+    </div>
+  </div>
+  <button class="btn btn-primary  m-4" (click)="proximo()">enviar</button>
+  <button class="btn btn-danger " (click)="voltar()">voltar</button>
 </form>
