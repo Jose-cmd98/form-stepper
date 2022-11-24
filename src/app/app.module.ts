@@ -16,6 +16,10 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { FormularioTwoComponent } from './formulario-two/formulario-two.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FatherFormComponent } from './formulario-two/father-form/father-form.component';
+import { FormWrapperComponent } from './Formulario-Reativo-Custom/form-wrapper/form-wrapper.component';
+import { StepsInfoPessoalComponent } from './Formulario-Reativo-Custom/form-wrapper/steps-info-pessoal/steps-info-pessoal.component';
+import { StepValorComponent } from './Formulario-Reativo-Custom/form-wrapper/step-valor/step-valor.component';
+import { StepPagamentoComponent } from './Formulario-Reativo-Custom/form-wrapper/step-pagamento/step-pagamento.component';
 
 
 @NgModule({
@@ -23,7 +27,11 @@ import { FatherFormComponent } from './formulario-two/father-form/father-form.co
     AppComponent,
     FormularioComponent,
     FormularioTwoComponent,
-    FatherFormComponent
+    FatherFormComponent,
+    FormWrapperComponent,
+    StepsInfoPessoalComponent,
+    StepValorComponent,
+    StepPagamentoComponent
   ],
   imports: [
     BrowserModule,

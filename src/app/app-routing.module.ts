@@ -1,3 +1,4 @@
+import { FormWrapperComponent } from './Formulario-Reativo-Custom/form-wrapper/form-wrapper.component';
 
 import { FormularioTwoComponent } from './formulario-two/formulario-two.component';
 import { FormularioComponent } from './formulario/formulario.component';
@@ -23,6 +24,11 @@ const routes: Routes = [
     path: 'cdk-teste',
     component: FormularioCdkComponent,
     loadChildren: () => import('./cdk-form/cdk-form.module').then((module) => module.CdkFormModule)
+  },
+  //
+  {
+    path: 'formulario-custom-header',
+    component: FormWrapperComponent
   }
 ];
 
