@@ -1,6 +1,16 @@
 
 <form [formGroup]="formulario">
   <h4 class="text-center">Second Step</h4>
+  <input class="form-control mb-2" type="text" placeholder="CPF" formControlName="cpf" required>
+  <p *ngIf="cpfControl.invalid && cpfControl.touched">*CPF Obrigatório</p>
+  <div *ngIf="!cpfControl.pristine && cpfControl.errors">
+    <p *ngIf="cpfControl.errors?.['required']">
+      CPF é obrigatório.
+    </p>
+    <p *ngIf="cpfControl.errors?.['cpfInvalido']">
+      Digite um CPF válido
+    </p>
+  </div>
   <input class="form-control" type="text" placeholder="Rua" formControlName="rua">
   <input class="form-control mt-2" type="text" placeholder="Cep" formControlName="cep">
   <input class="form-control mt-2" type="text" placeholder="Bairro" formControlName="bairro">

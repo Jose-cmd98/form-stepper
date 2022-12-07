@@ -1,4 +1,5 @@
-import { FormGroup, FormBuilder, FormArray, Form } from '@angular/forms';
+import { Validacoes } from './../validacoes';
+import { FormGroup, FormBuilder, FormArray, Form, Validators, AbstractControl } from '@angular/forms';
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
@@ -12,6 +13,8 @@ export class StepsInfoPessoalComponent implements OnInit {
   @Input() public dados!: any;
 
 
+  get cpfControl(): AbstractControl { return this.formulario.controls['cpf']}
+
   public formulario!: FormGroup;
 
   constructor(
@@ -22,6 +25,7 @@ export class StepsInfoPessoalComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this._fb.group({
+      cpf: ['', Validators.compose([Validators.required, Validacoes.ValidaCpf])],
       rua: this._fb.control(''),
       cep: this._fb.control(''),
       bairro: this._fb.control(''),
